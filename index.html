@@ -16,8 +16,10 @@
       color: #e0e0e0;
       margin: 0;
       padding: 0;
+      line-height: 1.7;
     }
     h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -1px; }
+    
     .hero {
       min-height: 100vh;
       display: flex;
@@ -27,43 +29,35 @@
       background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
       position: relative;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: 800px; height: 800px;
-      background: radial-gradient(circle, rgba(0,245,255,0.12) 0%, transparent 60%);
-      top: -300px; left: -300px;
-      animation: pulse 15s infinite;
-    }
-    @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
-    .hero-content { display: flex; flex-direction: column; align-items: center; }
     .profile-pic {
-      width: 190px; height: 190px;
+      width: 210px; height: 210px;
       border-radius: 50%;
       border: 6px solid var(--accent);
       margin-bottom: 25px;
-      box-shadow: 0 0 40px rgba(0, 245, 255, 0.4);
+      box-shadow: 0 0 50px rgba(0, 245, 255, 0.5);
+      object-fit: cover;
     }
     .hero-content h1 {
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       margin: 0;
       background: linear-gradient(90deg, #ffffff, #00f5ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .typing { font-size: 1.6rem; color: #00f5ff; margin: 15px 0; font-weight: 500; }
-    .section { padding: 90px 20px; max-width: 1100px; margin: 0 auto; }
+    .typing { font-size: 1.7rem; color: #00f5ff; margin: 15px 0; font-weight: 500; }
+
+    .section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
     .card {
       background: var(--card);
       border-radius: 20px;
-      padding: 40px;
+      padding: 45px;
       border: 1px solid #222;
       transition: all 0.4s ease;
     }
     .card:hover {
-      transform: translateY(-12px);
+      transform: translateY(-15px);
       border-color: var(--accent);
-      box-shadow: 0 25px 50px rgba(0, 245, 255, 0.15);
+      box-shadow: 0 30px 60px rgba(0, 245, 255, 0.2);
     }
     .btn {
       display: inline-block;
@@ -82,84 +76,133 @@
       color: #000;
       transform: scale(1.08);
     }
-    .skills-grid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
     }
+    ul { padding-left: 20px; }
+    li { margin: 8px 0; }
   </style>
 </head>
 <body>
+
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <img src="pavan pic.jpg" alt="Naga Venkata Sai Pavan Gummadi" class="profile-pic">
-     
+      <img src="pavan pic.jpg" alt="Naga Venkata Sai Pavan Gummadi" class="profile-pic" 
+           onerror="this.src='https://via.placeholder.com/210?text=Your+Photo';">
+      
       <h1>Naga Venkata Sai Pavan Gummadi</h1>
       <p class="typing">SAP Fieldglass Senior Analyst & Test Automation Engineer</p>
-      <p style="font-size:1.2rem; color:#888;">Accenture • Bengaluru • 4.5+ Years Experience</p>
-     
+      <p style="font-size:1.3rem; color:#aaa;">Accenture • Bengaluru • 4.5+ Years Experience</p>
+
       <div style="margin-top: 50px;">
         <a href="https://drive.google.com/uc?id=1nwpgWZZVnRCLA9_yJUSOyrz0rYpygbRZ&export=download" class="btn">
           <i class="fas fa-download"></i> Download Resume
         </a>
-        <a href="https://linkedin.com/in/naga-venkata-sai-pavan-gummadi-503214150" class="btn">
-          <i class="fab fa-linkedin"></i> Connect on LinkedIn
+        <a href="https://linkedin.com/in/naga-venkata-sai-pavan-gummadi-503214150" class="btn" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
         </a>
       </div>
     </div>
   </section>
 
+  <!-- About -->
   <section class="section">
     <div class="card">
       <h2>About Me</h2>
-      <p>Results-driven Test Automation Engineer with <strong>4.5+ years</strong> at Accenture, delivering high-impact Contingent Workforce Management solutions for global clients like Shell India.</p>
-      <p>Passionate about modernizing testing with Python, Playwright, CI/CD, and AI-powered solutions.</p>
+      <p>Results-driven Test Automation Engineer with <strong>4.5+ years</strong> of experience at Accenture. Specialized in SAP Fieldglass (Contingent Workforce Management) implementations and building robust automation solutions.</p>
+      <p>Passionate about leveraging Python, Playwright, and Generative AI to modernize testing processes and deliver high-quality enterprise solutions.</p>
     </div>
   </section>
 
+  <!-- Experience -->
   <section class="section" style="background:#0f0f0f;">
     <div class="card">
       <h2>Professional Experience</h2>
-      <h3>Accenture Solutions Pvt. Ltd. — SAP Fieldglass Senior Analyst</h3>
-      <p><strong>Oct 2021 – Present</strong> | Shell India</p>
+      <h3>SAP Fieldglass Senior Analyst & Test Automation Engineer</h3>
+      <p><strong>Accenture Solutions Pvt. Ltd.</strong> | Oct 2021 – Present | Shell India</p>
       <ul>
-        <li>Led supplier onboarding, RBAC, approval workflows & template configuration</li>
-        <li>Designed rate cards, multi-currency billing & complex approval processes</li>
-        <li>Managed Azure DevOps CI/CD pipelines for major releases</li>
+        <li>Led supplier onboarding, RBAC, approval workflows, and template configuration in SAP Fieldglass</li>
+        <li>Designed complex rate cards, multi-currency billing, and approval matrix</li>
+        <li>Built and maintained Azure DevOps CI/CD pipelines for major releases</li>
         <li>Reduced manual testing by <strong>60%</strong> and post-release defects by <strong>30%</strong> using Tricentis TOSCA</li>
-        <li>Achieved <strong>25% MTTR reduction</strong> via ServiceNow-Azure integration</li>
+        <li>Achieved <strong>25% MTTR reduction</strong> through ServiceNow-Azure DevOps integration</li>
+        <li>Performed end-to-end API testing using REST Assured & Postman</li>
       </ul>
     </div>
   </section>
 
+  <!-- Projects -->
   <section class="section">
     <div class="card">
-      <h2>🚀 Currently Building</h2>
+      <h2>🚀 Key Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Python + Playwright Test Automation Framework</h3>
+          <p>Developing a modern, maintainable UI & API automation framework using Python, Playwright, and Pytest for faster regression testing.</p>
+        </div>
+        <div class="card">
+          <h3>AI-Powered Test Case Generator</h3>
+          <p>Building an LLM-based tool that generates test cases and test scripts automatically from business requirements and user stories.</p>
+        </div>
+        <div class="card">
+          <h3>SAP Fieldglass Implementation & Enhancements - Shell India</h3>
+          <p>Successfully delivered multiple critical enhancements, integrations, and production support for global contingent workforce management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section" style="background:#0f0f0f;">
+    <h2 style="text-align:center; margin-bottom:40px;">Skills & Technologies</h2>
+    <div class="grid">
+      <div class="card"><strong>SAP Fieldglass:</strong> Configuration, Workflows, RBAC, Rate Cards, Integrations</div>
+      <div class="card"><strong>Automation Tools:</strong> Tricentis TOSCA, Playwright, Selenium, Python</div>
+      <div class="card"><strong>Testing:</strong> API Testing, REST Assured, Postman, Manual & Regression Testing</div>
+      <div class="card"><strong>DevOps & Tools:</strong> Azure DevOps, CI/CD Pipelines, Git, Jira, ServiceNow</div>
+      <div class="card"><strong>Others:</strong> Generative AI (LLMs), SQL, Java, Agile Methodology</div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section">
+    <div class="card">
+      <h2>Education</h2>
+      <h3>Bachelor of Technology (B.Tech)</h3>
+      <p><strong>Stream:</strong> [Your Branch e.g. Computer Science / Electronics]</p>
+      <p><strong>College:</strong> [Your College Name]</p>
+      <p><strong>Year:</strong> [Graduation Year] | CGPA: [Your CGPA]</p>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section" style="background:#0f0f0f;">
+    <div class="card">
+      <h2>Certifications</h2>
       <ul>
-        <li><strong>Python + Playwright Automation Framework</strong></li>
-        <li><strong>AI-Powered Test Case Generator</strong> using LLMs</li>
+        <li>SAP Fieldglass Certified Associate (or any relevant certification)</li>
+        <li>Tricentis TOSCA Automation Specialist</li>
+        <li>Python for Automation / Playwright Certification (if any)</li>
+        <li>Azure DevOps Fundamentals</li>
       </ul>
     </div>
   </section>
 
-  <section class="section" style="background:#0f0f0f;">
-    <h2 style="text-align:center;">Skills & Technologies</h2>
-    <div class="skills-grid">
-      <div class="card">SAP Fieldglass • RBAC • Workflows • Integrations</div>
-      <div class="card">TOSCA • REST Assured • API Testing</div>
-      <div class="card">Azure DevOps • CI/CD • ServiceNow</div>
-      <div class="card">Python • Playwright • Generative AI</div>
-    </div>
-  </section>
-
+  <!-- Contact -->
   <section class="section">
     <div class="card" style="text-align:center;">
       <h2>Get In Touch</h2>
-      <p style="font-size:1.3rem;">gnvsaipavan20@gmail.com &nbsp; | &nbsp; +91 7013845677</p>
-      <p style="margin-top:30px; color:#00f5ff; font-size:1.25rem;">
-        Open to SDET & Test Automation Opportunities
+      <p style="font-size:1.4rem; margin:25px 0;">
+        📧 <strong>gnvsaipavan20@gmail.com</strong> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 📱 <strong>+91 7013845677</strong>
+      </p>
+      <p style="color:#00f5ff; font-size:1.35rem;">
+        Actively looking for <strong>SDET, Test Automation Engineer, and SAP Fieldglass</strong> opportunities.
       </p>
     </div>
   </section>
+
 </body>
 </html>
