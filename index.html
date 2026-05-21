@@ -8,12 +8,12 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
    
-    :root { --bg: #0a0a0a; --card: #111111; --accent: #00f5ff; --text: #e0e0e0; }
+    :root { --bg: #0a0a0a; --card: #111111; --accent: #00f5ff; }
    
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--text);
+      color: #e0e0e0;
       margin: 0;
       padding: 0;
       line-height: 1.8;
@@ -26,64 +26,115 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
       position: relative;
-      overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: 800px; height: 800px;
-      background: radial-gradient(circle, rgba(0,245,255,0.15) 0%, transparent 70%);
-      top: -200px; left: -200px;
-      animation: pulse 20s infinite;
-    }
-    @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
-
     .profile-pic {
-      width: 220px; height: 220px;
+      width: 230px; height: 230px;
       border-radius: 50%;
-      border: 7px solid var(--accent);
+      border: 8px solid var(--accent);
       margin-bottom: 30px;
       box-shadow: 0 0 60px rgba(0, 245, 255, 0.6);
       object-fit: cover;
     }
     .hero-content h1 {
-      font-size: 4rem;
-      margin: 0 0 10px 0;
-      background: linear-gradient(90deg, #fff, #00f5ff);
+      font-size: 4.2rem;
+      margin: 0;
+      background: linear-gradient(90deg, #ffffff, #00f5ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .typing { font-size: 1.75rem; color: var(--accent); margin: 10px 0; font-weight: 500; }
+    .typing { font-size: 1.8rem; color: #00f5ff; margin: 15px 0; }
 
     .section { padding: 110px 20px; max-width: 1250px; margin: 0 auto; }
     .card {
       background: var(--card);
       border-radius: 24px;
-      padding: 48px;
+      padding: 50px;
       border: 1px solid #222;
       transition: all 0.4s ease;
     }
     .card:hover {
-      transform: translateY(-18px);
+      transform: translateY(-20px);
       border-color: var(--accent);
-      box-shadow: 0 35px 70px rgba(0, 245, 255, 0.18);
+      box-shadow: 0 40px 80px rgba(0, 245, 255, 0.2);
     }
     .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       background: transparent;
       color: var(--accent);
       border: 2px solid var(--accent);
-      padding: 15px 40px;
+      padding: 16px 40px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
       margin: 12px;
-      transition: all 0.4s;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+      transition: 0.4s;
     }
     .btn:hover {
       background: var(--accent);
-     
+      color: #000;
+      transform: scale(1.1);
+    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-content">
+      <img src="pavan pic.jpg" alt="Naga Venkata Sai Pavan Gummadi" class="profile-pic">
+      
+      <h1>Naga Venkata Sai Pavan Gummadi</h1>
+      <p class="typing">SAP Fieldglass Senior Analyst & Test Automation Engineer</p>
+      <p style="font-size:1.4rem; color:#aaa;">Accenture • Bengaluru • 4.5+ Years Experience</p>
+
+      <div style="margin-top: 60px;">
+        <a href="https://drive.google.com/uc?id=1nwpgWZZVnRCLA9_yJUSOyrz0rYpygbRZ&export=download" class="btn">
+          <i class="fas fa-download"></i> Download Resume
+        </a>
+        <a href="https://linkedin.com/in/naga-venkata-sai-pavan-gummadi-503214150" class="btn" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2>About Me</h2>
+      <p>Results-driven Test Automation Engineer with over 4.5 years of experience at Accenture. Specialized in SAP Fieldglass (Contingent Workforce Management) and building modern automation frameworks using Python and Playwright.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:#0f0f0f;">
+    <div class="card">
+      <h2>Professional Experience</h2>
+      <h3>SAP Fieldglass Senior Analyst & Test Automation Engineer</h3>
+      <p><strong>Accenture • Shell India</strong> | Oct 2021 – Present</p>
+      <ul>
+        <li>Led supplier onboarding, RBAC, workflows & complex configurations</li>
+        <li>Designed rate cards, billing & approval processes</li>
+        <li>Reduced manual testing by 60% using Tricentis TOSCA</li>
+        <li>Built CI/CD pipelines in Azure DevOps</li>
+        <li>Improved MTTR by 25% via ServiceNow integration</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card" style="text-align:center;">
+      <h2>Get In Touch</h2>
+      <p style="font-size:1.5rem; margin:30px 0;">
+        📧 gnvsaipavan20@gmail.com &nbsp; | &nbsp; 📱 +91 7013845677
+      </p>
+      <p style="color:#00f5ff; font-size:1.4rem;">
+        Open to SDET & Test Automation Opportunities
+      </p>
+    </div>
+  </section>
+
+</body>
+</html>
